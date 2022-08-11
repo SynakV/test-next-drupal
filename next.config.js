@@ -8,6 +8,7 @@ module.exports = withPWA({
     register: true,
 		skipWaiting: true,
     runtimeCaching,
+    buildExcludes: [/middleware-manifest.json$/]
   },
   images: {
     domains: [process.env.NEXT_IMAGE_DOMAIN],
