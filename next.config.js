@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
+
+module.exports = withPWA({
   images: {
     domains: [process.env.NEXT_IMAGE_DOMAIN],
   },
-}
-
-module.exports = nextConfig
+  pwa: {
+    dest: 'public',
+    runtimeCaching
+  }
+});
